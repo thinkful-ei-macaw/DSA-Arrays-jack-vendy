@@ -125,11 +125,9 @@ function twoDee(arr) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr[i].length; j++) {
       if (arr[i][j] === 0) {
-        arr[0][j] = 2;
         cols.add(j);
       }
       if (arr[j][i] === 0) {
-        arr[i][0] = 4;
         rows.add(i);
       }
     }
