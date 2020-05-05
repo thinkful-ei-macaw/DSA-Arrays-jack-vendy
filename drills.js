@@ -81,7 +81,7 @@ function removeChars(string, chars) {
     return '';
   }
 
-  const re = new RegExp(`[${chars}]`, 'g');
+  const re = new RegExp(`[${chars}]`, 'i');
 
   if (re.test(string[0])) {
     return removeChars(string.slice(1), chars);
@@ -111,5 +111,7 @@ function products(arr) {
   }
   return result;
 }
+
+// O(n^2);
 
 console.log(products([1, 3, 9, 4]));
