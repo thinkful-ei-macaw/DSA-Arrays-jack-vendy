@@ -115,3 +115,45 @@ function products(arr) {
 // O(n^2);
 
 console.log(products([1, 3, 9, 4]));
+
+// Messy solution
+
+function twoDee(arr) {
+  let cols = new Set();
+  let rows = new Set();
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      if (arr[i][j] === 0) {
+        arr[0][j] = 2;
+        cols.add(j);
+      }
+      if (arr[j][i] === 0) {
+        arr[i][0] = 4;
+        rows.add(i);
+      }
+    }
+  }
+
+  rows.forEach((row) => {
+    arr[row].fill(0);
+  });
+
+  cols.forEach((col) => {
+    for (let i = 0; i < arr.length; i++) {
+      arr[i][col] = 0;
+    }
+  });
+
+  return arr;
+}
+
+let myArr = [
+  [1, 0, 1, 1, 0],
+  [0, 1, 1, 1, 0],
+  [1, 1, 1, 1, 1],
+  [1, 0, 1, 1, 1],
+  [1, 1, 1, 1, 1],
+];
+
+console.log(twoDee(myArr));
