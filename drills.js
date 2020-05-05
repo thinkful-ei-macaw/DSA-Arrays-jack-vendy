@@ -116,7 +116,7 @@ function products(arr) {
 
 console.log(products([1, 3, 9, 4]));
 
-// Messy solution
+// 2D Array
 
 function twoDee(arr) {
   let cols = new Set();
