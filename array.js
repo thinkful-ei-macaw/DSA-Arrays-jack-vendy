@@ -16,6 +16,9 @@ class Array {
     this.length++;
   }
 
+//reallocate spaces in array if hits capacity
+//moving copied array
+//cleans up copied old array 
   _resize(size) {
     const oldPtr = this.ptr;
     this.ptr = memory.allocate(size);
@@ -79,8 +82,18 @@ function main() {
   arr.push(19);
   arr.push(45);
   arr.push(10);
-
-  console.log(arr);
+  //capacity and pointer didn't move due to pop, 
+  //reduce length of array
+  //address starts at 3 until 15 for capacity of 12
+  arr.pop();
+  arr.pop();
+  arr.pop();
+  arr.pop();
+  arr.pop();
+  //arr.push("tauhida"); is NAN because array is of numbers not str, diff datatypes
+  //
+  
+  console.log(arr.get(0));
 }
 
 main();
